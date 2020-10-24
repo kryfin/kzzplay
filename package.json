@@ -4,10 +4,17 @@
   "description": "useful",
   "main": "main.js",
   "scripts": {
-    "test": "aa",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
     "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
     "start": "node ./dist/server.js"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css||less)$":"<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$":"<rootDir>/__mocks__/fileMock.js"
+    }    
   },
   "repository": {
     "type": "git",
@@ -25,11 +32,15 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
+    "eslint": "^7.12.0",
+    "eslint-loader": "^4.0.2",
     "file-loader": "^6.1.1",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.1",
     "mini-css-extract-plugin": "^1.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "style-loader": "^2.0.0",
