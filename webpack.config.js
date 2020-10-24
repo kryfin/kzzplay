@@ -1,37 +1,45 @@
-var HtmlwebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+
 
 module.exports = {
-    entry: [
-        'babel-polyfill',
-        './src/main.js'
-    ],
-    output: {
-        path: __dirname +'/dist',
-        filename: 'bundle.js'
+    entry: {
+        server: './src/main.js'
     },
+    output: {
+        path: path.join(__dirname, '/dist'),
+        publicPath : '/',
+        filename: 'main.js'
+    },
+    target: 'node',
+    node: {
+        __dirname: false,
+        __filename: false,
+    },
+    externals: [nodeExternals()],
     module: {
-        rules: [
+        rules: [ 
             { 
                 test: /\.js?$/, 
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                options: {
-                    plugins: ['transform-runtime'],
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/
             
              },
              {
-                test: /\.hbs$/, loader: 'handlebars-loader'    
-      
-             }
+                    test: /\.html$/,
+                    use: [{loader: "html-loader" }]
 
-        ]
-    },
-    plugins: [
-        new HtmlwebpackPlugin({
-            title: 'Intro to webpack',
-            template: 'src/index.html'
-        })
-]
+             }
+            ]
+           },
+           plugins: [
+                 new HtmlWebPackPlugin({
+                     template: 'src/index.html',
+                     filename: 'src/index.html',
+                     excludeChunks: ['server']
+               })
+           ]
 }

@@ -4,11 +4,9 @@
   "description": "useful",
   "main": "main.js",
   "scripts": {
-    "prebuild": "del-cli dist -f",
     "test": "aa",
-    "build": "webpack",
-    "server": "http-server ./dist",
-    "start": "npm run build -s && npm run server -s"
+    "build": "rm -rf dist && webpack --mode development",
+    "start": "node ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,20 +22,20 @@
   },
   "homepage": "https://github.com/kryfin/pixdire#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "del-cli": "^3.0.1",
-    "handlebars": "^4.7.6",
-    "handlebars-loader": "^1.7.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
-    "http-server": "^0.12.3",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "style-loader": "^2.0.0",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "lodash": "^4.17.20"
   }
 }
