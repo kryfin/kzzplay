@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "aa",
-    "build": "rm -rf dist && webpack --mode development",
+    "build": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development",
     "start": "node ./dist/server.js"
   },
   "repository": {
