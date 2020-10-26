@@ -13,6 +13,7 @@ before_install:
 - sudo apt-get install ffmpeg
 script: npm test
 deploy:
+    provider: heroku    
     app: 
         master: pixdire
     api:
