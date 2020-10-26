@@ -13,10 +13,13 @@ before_install:
 - sudo apt-get install ffmpeg
 script: npm test
 deploy:
+- provider: heroku
     app: 
         master: pixdire
     api:
     key:
       secure: TblhcTzQpA1U1ZHdCSybPgQzgIIgV8WUJzFY2pDJ7UvpGD6M9nEL2gO7ttXFEeNXHKp8re09kFyGzeHIeQ4uEb54RCaKdGXjVv63fFGcvxLVZZCbG64LnubBZRsOA0D1dlH4shUIenbaITSPeoLGOkaxZm3DIW9cw259qCEbu+7k6bY2IfNTiffKcWERNdR1oCb1k5WJM/sHB37+SxoVWKhBQTDQJnExJGVu5PiAjYPfhMIEMy8eu/eUo4pWbZGBiKCXgr3Qvf1XZJJdpXSeLyiFg71Wyy7yyZx5d6kBqhXfbABtxDpykcMl55st4TmH82OGyIqqkOhuC+gzBnqX/g8uPPoK05XDxuKkluELkihn+0MrQHe7zFXI6AcbFFhUCaLLsMjvIU/K20EbHDtQd9nJBahqWKt3ZjAQ6APV8KVPxMWE2RexjSbLO9+MvL+n0P3KQRf5viUAsfR/db8yVZ5lnpcdkkkJyGb3V38iaTRwmkWTpXaid6a5a+Ms/zryvEXK1/5E5He3ca9h847J7P9tkTbkVpJDc0IE++d6dK0vJANCOZWNfm3E1mk2stnLLFXW1p3nb/sALAVOZU1uzPIg2ctbc2vPJ0BeNpMqthZaSSpXLcd5MYKj2op2JRdybD6pyEF1kjBQC1B8bcbYkqiZQVKLohFaYUSPvg8ua/Q=
     on:
+        tags: true    
         branch: master 
+        
