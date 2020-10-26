@@ -1,18 +1,19 @@
 dist: trusty
 sudo: required
 language: node_js
-services:
-- docker
-before_install:
-- sudo add-apt-repository --yes ppa:mc3man/trusty-media
-- sudo echo "deb [check-valid-until=no] http://archive.debian.org/debian jessie-backports
-  main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list
-- sudo sed -i '/deb http:\/\/\(deb\|httpredir\).debian.org\/debian jessie.* main/d'  /etc/apt/sources.list
-- sudo apt-get -o Acquire::Check-Valid-Until=false update
-- sudo apt-get update
-- sudo apt-get install ffmpeg
+# services:
+# - docker
+# before_install:
+# - sudo add-apt-repository --yes ppa:mc3man/trusty-media
+# - sudo echo "deb [check-valid-until=no] http://archive.debian.org/debian jessie-backports
+#   main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list
+# - sudo sed -i '/deb http:\/\/\(deb\|httpredir\).debian.org\/debian jessie.* main/d'  /etc/apt/sources.list
+# - sudo apt-get -o Acquire::Check-Valid-Until=false update
+# - sudo apt-get update
+# - sudo apt-get install ffmpeg
 script: npm test
 deploy:
-  api:
+- provider: heroku
+    api:
     key:
       secure: TblhcTzQpA1U1ZHdCSybPgQzgIIgV8WUJzFY2pDJ7UvpGD6M9nEL2gO7ttXFEeNXHKp8re09kFyGzeHIeQ4uEb54RCaKdGXjVv63fFGcvxLVZZCbG64LnubBZRsOA0D1dlH4shUIenbaITSPeoLGOkaxZm3DIW9cw259qCEbu+7k6bY2IfNTiffKcWERNdR1oCb1k5WJM/sHB37+SxoVWKhBQTDQJnExJGVu5PiAjYPfhMIEMy8eu/eUo4pWbZGBiKCXgr3Qvf1XZJJdpXSeLyiFg71Wyy7yyZx5d6kBqhXfbABtxDpykcMl55st4TmH82OGyIqqkOhuC+gzBnqX/g8uPPoK05XDxuKkluELkihn+0MrQHe7zFXI6AcbFFhUCaLLsMjvIU/K20EbHDtQd9nJBahqWKt3ZjAQ6APV8KVPxMWE2RexjSbLO9+MvL+n0P3KQRf5viUAsfR/db8yVZ5lnpcdkkkJyGb3V38iaTRwmkWTpXaid6a5a+Ms/zryvEXK1/5E5He3ca9h847J7P9tkTbkVpJDc0IE++d6dK0vJANCOZWNfm3E1mk2stnLLFXW1p3nb/sALAVOZU1uzPIg2ctbc2vPJ0BeNpMqthZaSSpXLcd5MYKj2op2JRdybD6pyEF1kjBQC1B8bcbYkqiZQVKLohFaYUSPvg8ua/Q=
