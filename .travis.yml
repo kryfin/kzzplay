@@ -14,8 +14,7 @@ before_install:
 script: npm test
 deploy:
     provider: heroku    
-    app: 
-        master: pixdire
+ 
     api-key: uaa4klkIqAHCNdM7XKp/Nu4ilBHfpEs3JQOii64PphAFLRxG6xlr2zzC3PiaR5Hf9PXXQfaQISsoWdqv6jSPKGitrApZPyJRqLELpRad0aCl2Xcg1swdu+R2vTy4XG0ro+PnzqHH5MOiBrrDhxNFvkO/MCOBamzSmpr9ljPQ9DtCuCiVA0MzFv/ZeTISDY0k5rx2Z/cosLqH6qW7sOqUSWZpDnU+fz7u1eTcLfVAPoBZn1HwmomIS8W0yFn7zEmUQN32r56Ey8InhYvzRGzdixO9HbU7MJfGAk5Hsb4A4tCqiW6cmUfTEkBcIVHqg0HAEsDZlkZqtSgKw1yrsYvqdOs0a+p2Vgm3moxcvExNIz8UVIhE8usv4iGM/IwMVj5YZXoAKSBMMq+uIVNur8mNMv91ftseWQTqUjM9ctXqoKhq/bGyUSLTwHgGFxwXMl6uLiTpSEzLIRP+Iq4wfA/7zaoVV9EQMWro0Yme1EHrXKgq9aJKP9TnvsFR2SJQ0GCzYf+fsUXUf3gBbVlldNONa2yrOSY63Tq2I3m/8Tx5iMZ/L5FyuY3gmSNbts8W6RPBXuhF3GFZls4K9Ax0I29XP5uCxT3p3GZya9tLPCUq3SllM3ut+A+1pBVBKkTUW2H7dgCUXs40PMy6pPlVl/sOLw9gF0PyGu7746vLiz2tgd4=
     on:
         all_branches: true 
