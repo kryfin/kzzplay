@@ -1,10 +1,20 @@
 dist: trusty
 sudo: required
 language: node_js
+services:
+- docker
+before_install:
+- sudo add-apt-repository --yes ppa:mc3man/trusty-media
+- sudo echo "deb [check-valid-until=no] http://archive.debian.org/debian jessie-backports
+  main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list
+- sudo sed -i '/deb http:\/\/\(deb\|httpredir\).debian.org\/debian jessie.* main/d'  /etc/apt/sources.list
+- sudo apt-get -o Acquire::Check-Valid-Until=false update
+- sudo apt-get update
+- sudo apt-get install ffmpeg
 script: npm test
 deploy:
-    provider: heroku    
- 
-    api-key: uaa4klkIqAHCNdM7XKp/Nu4ilBHfpEs3JQOii64PphAFLRxG6xlr2zzC3PiaR5Hf9PXXQfaQISsoWdqv6jSPKGitrApZPyJRqLELpRad0aCl2Xcg1swdu+R2vTy4XG0ro+PnzqHH5MOiBrrDhxNFvkO/MCOBamzSmpr9ljPQ9DtCuCiVA0MzFv/ZeTISDY0k5rx2Z/cosLqH6qW7sOqUSWZpDnU+fz7u1eTcLfVAPoBZn1HwmomIS8W0yFn7zEmUQN32r56Ey8InhYvzRGzdixO9HbU7MJfGAk5Hsb4A4tCqiW6cmUfTEkBcIVHqg0HAEsDZlkZqtSgKw1yrsYvqdOs0a+p2Vgm3moxcvExNIz8UVIhE8usv4iGM/IwMVj5YZXoAKSBMMq+uIVNur8mNMv91ftseWQTqUjM9ctXqoKhq/bGyUSLTwHgGFxwXMl6uLiTpSEzLIRP+Iq4wfA/7zaoVV9EQMWro0Yme1EHrXKgq9aJKP9TnvsFR2SJQ0GCzYf+fsUXUf3gBbVlldNONa2yrOSY63Tq2I3m/8Tx5iMZ/L5FyuY3gmSNbts8W6RPBXuhF3GFZls4K9Ax0I29XP5uCxT3p3GZya9tLPCUq3SllM3ut+A+1pBVBKkTUW2H7dgCUXs40PMy6pPlVl/sOLw9gF0PyGu7746vLiz2tgd4=
-    on:
-        all_branches: true 
+  provider: heroku
+  on:
+    all_branches: true
+  api_key:
+    secure: wbnPxWHDl9JhnUKHnpATRpXpJLhuKBIdauHq5+ifQnVrM9J7N90MtPFmYhWXLLHJaPlnRz6pquMN+2+/HbKdq8jryFMeHs4F9ipMOOnfcVGY2RgU9p9Wx7phuH2oXw5CsJ/J0gBhQu+xqhrKx/AZxU9d7waO1tysk8KbYI3OeUWEgvOliFbMjubfds3lGVOpXeX06xurm+AixEy8iNeQlekDdBpB40ig2tMZxKR2pAou6h7Wk8+i9IzJW6q0mBkNppcAnjn4pcCWtk6SuMnyrQN4sCA2VHC2qbUerMN4BfHvwF2s1ctfpUow3P6A4QTi2GY7WnYA4sIF1OA5BiWCer0pBZpbkZqKIzGH31XEO83R4mG/n30ggUJmJwGUbTikLc/j7kyuvxXGzTGd8z0/xJCGFQkmNsoEQMH9cOo9BHodWSHm00qVfAOcxHF4elpBhtc/As9/nxxlwmudKjRMNTMQ79hNfRBI1ctDGOQcgsTaApFst/SJKVzA0UBT51hypiEWJyUrrx5+xgKLsqPaUf1dFiMtB5nR7XGv6uqRVsm6ayUpl/MD/28zHHpX23GhtTkNd+Vo/9xT9T03bYKchBQ3MYANqOS9PVZVUOMG3JYsnph5EFSZ70wwmU586gN66Tap/Z1ohp+8MAo5UCfinqlpo78aPj0buP5LwQD6uc0=
