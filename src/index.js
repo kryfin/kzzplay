@@ -1,9 +1,14 @@
-import logMessage from './js/logger';
-import './css/style.css';
-// Log message to console
-logMessage('Welcome to pixdires!');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Message from './js/Message';
 
-if(typeof(module.hot)!=='undefined'){
+ReactDOM.render(
+    <Message />,
+    document.getElementById('react-container')
+
+)
+
+if (module.hot)
     module.hot.accept();
 
-}
+
