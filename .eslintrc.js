@@ -1,5 +1,3 @@
-const { ESLint } = require("eslint");
-
 module.exports = {
     "plugins": [ "react" ],
     "extends": [
