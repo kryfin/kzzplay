@@ -4,6 +4,7 @@ import {Page} from './PageWarning';
 import {NameForm, EssayForm, FlavourForm} from './Form';
 import { Reservation } from './Reservation';
 import { Calculator } from './TempCalculator';
+import {SignUpDialog} from './SignUpDialog';
 
 export const App = () =>{
     return(
@@ -11,7 +12,7 @@ export const App = () =>{
         <h1>Pixdire</h1>
         <p className="description">the sharing app</p>
         <div className="awful-selfie"></div>
-        <Clock />
+        {/* <Clock />
         <Toggle />
         <LoginControl />
         <MailBox unreadMessages={['React', 'Re: React','Re: Re: React']} />
@@ -21,7 +22,8 @@ export const App = () =>{
         <EssayForm />
         <FlavourForm />
         <Reservation />        
-        <Calculator />
+        <Calculator /> */}
+        <SignUpDialog />
      
     </div>
     )
