@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Element } from './js/Message';
+import { App } from './js/App';
 
 
 ReactDOM.render(
-    <Element />,
+    <App />,
     document.getElementById('react-container') // eslint-disable-line no-undef
 
 )

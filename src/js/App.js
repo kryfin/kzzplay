@@ -1,9 +1,11 @@
-
-import { isNull } from 'lodash';
 import React from 'react';
 
+import {Page} from './PageWarning';
+import {NameForm, EssayForm, FlavourForm} from './Form';
+import { Reservation } from './Reservation';
+import { Calculator } from './TempCalculator';
 
-export const Element = () =>{
+export const App = () =>{
     return(
  <div className="content">
         <h1>Pixdire</h1>
@@ -15,15 +17,22 @@ export const Element = () =>{
         <MailBox unreadMessages={['React', 'Re: React','Re: Re: React']} />
         <Page />
         <NumberList numbers={[1, 2, 3, 4, 5, 6]}/>
+        <NameForm />
+        <EssayForm />
+        <FlavourForm />
+        <Reservation />        
+        <Calculator />
+     
     </div>
     )
 }
 
-function NumberList(props){
+
+const NumberList =(props) =>{
     
     const numbers = props.numbers;
     const listItems = numbers.map((number) =>
-     <li key={number.id}>{number}</li>
+     <li>{number}</li>
     );
     return(
         <ul>{listItems}</ul>
@@ -31,7 +40,8 @@ function NumberList(props){
 
 }
 
-function MailBox(props){
+
+const MailBox=(props)=>{
     const unreadMessages = props.unreadMessages;
     return(
         <div>
@@ -79,40 +89,7 @@ class LoginControl extends React.Component{
 
 }
 
-function WarningBanner(props) {
-    if(!props.warn){
-        return null;
-    }
-    return (
-        <div className="warning">
-            Warning!
-        </div>
-    );
-}
-class Page extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {showWarning: true};
-        this.handleToggleClick = this.handleToggleClick.bind(this);
-    }
-    handleToggleClick(){
-        this.setState(state =>({
-            showWarning: !state.showWarning
-        }));
-    }
-    render(){
-        return (
-            <div>
-                <WarningBanner warn={this.state.showWarning} /> 
-                <button onClick={this.handleToggleClick}>
-                    {this.state.showWarning ? 'hide': 'show'}
-                </button>
-            </div>
-        );
-    }
-
-}
-function LoginButton(props){
+const LoginButton= (props)=>{
     return(
        <button onClick={props.onClick}>
            Login
@@ -120,7 +97,7 @@ function LoginButton(props){
 
     );
 }
-function LogoutButton(props){
+const LogoutButton= (props)=>{
     return(
         <button onClick={props.onClick}>
             Logout
@@ -129,15 +106,15 @@ function LogoutButton(props){
     );
 }
 
-function UserGreeting(props){
+const UserGreeting=(props)=>{
     return <h1>Wellcome back!</h1>;
 }
-function GuestGreeting (props){
+const GuestGreeting = (props)=>{
     return <h1>Please sign up</h1>;
 
 }
 
-function Greeting (props){
+const Greeting = (props)=>{
     const isLoggedIn = props.isLoggedIn;
     if(isLoggedIn){
         return <UserGreeting/> ;
