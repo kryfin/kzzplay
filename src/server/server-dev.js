@@ -27,7 +27,7 @@ app.get('*', (req,res, next)=>{
     })
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8007;
 
 app.listen(PORT, ()=>{
     console.log(`App listening to ${PORT}....`);

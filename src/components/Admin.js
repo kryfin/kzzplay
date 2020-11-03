@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Reservation extends React.Component {
+export class Admin extends React.Component {
     constructor(props){
         super(props);
         this.state = {
