@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Category } from './Categories';
 import { Clock, Toggle } from './Misc';
 import { Admin } from './Admin';
-
+import { Game } from './Game';
 
 export const App = () =>{
     return(
@@ -17,6 +17,7 @@ export const App = () =>{
             <Route path = "/toggle" component={Toggle}/>
             <Route path = "/category" component={Category}/>
             <Route path = "/admin" component={Admin}/>
+            <Route path = "/game" component={Game}/>
         </Switch>
     </div>
     )
