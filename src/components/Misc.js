@@ -48,18 +48,13 @@ export class Clock extends React.Component {
         <div>
            <p>It is {this.state.date.toLocaleTimeString()}</p>
            <ul>
-                 <li>
-                    <Link to="/toggle">Toggle</Link>
-                </li>
                 <li>
-                <Link to="/category">Category</Link>
-                </li>
-                <li>
-                    <Link to="/admin">Admin </Link>
+                    <Link to="/player">player</Link>
                 </li>
                 <li>
                     <Link to="/game">Game</Link>
                 </li>
+
             </ul>    
         </div>
     );

@@ -5,18 +5,16 @@ import { Category } from './Categories';
 import { Clock, Toggle } from './Misc';
 import { Admin } from './Admin';
 import { Game } from './Game';
-
+import { ResponsivePlayer } from './Player'; 
 export const App = () =>{
     return(
  <div className="content">
-        <h1>Pixdire</h1>
+        <h1 className="awful-selfie">Pixdire</h1>
         <p className="description">the sharing app</p>
-        <div className="awful-selfie"></div>
+        
         <Switch>
             <Route exact path="/" component={Clock}/>
-            <Route path = "/toggle" component={Toggle}/>
-            <Route path = "/category" component={Category}/>
-            <Route path = "/admin" component={Admin}/>
+            <Route path="/player" component={ResponsivePlayer}/>
             <Route path = "/game" component={Game}/>
         </Switch>
     </div>

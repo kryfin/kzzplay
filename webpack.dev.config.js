@@ -45,13 +45,16 @@ module.exports = {
              },
              {
                     test: /\.(png|svg|jpg|gif)$/,
-                    use: ['file-loader']
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]',
+                      },
                }
             ]
            },
            plugins: [
                  new HtmlWebPackPlugin({
-                     template: 'src/html/index.html',
+                     template: 'src/static/html/index.html',
                      filename: 'index.html',
                      excludeChunks: ['server']
                }),
