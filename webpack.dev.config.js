@@ -49,7 +49,20 @@ module.exports = {
                     options: {
                         name: '[path][name].[ext]',
                       },
-               }
+               },
+           
+               //       incase of using local media
+               //    {
+            //     test: /\.(mov|mp4|webm)$/,
+            //     use: [
+            //       {
+            //         loader: 'file-loader',
+            //         options: {
+            //           name: '[path][name].[ext]'
+            //         }  
+            //       }
+            //     ]
+            //   }
             ]
            },
            plugins: [
