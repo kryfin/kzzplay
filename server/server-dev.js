@@ -16,7 +16,7 @@ app.use(webpackDevMiddleaware(compiler,{
 }))
 app.use(webpackHotMiddleware(compiler));
 
-app.get('*', (req,res, next)=>{
+app.get('/', (req,res, next)=>{
     compiler.outputFileSystem.readFile(HTML_FILE, (err, result)=>{
         if(err){
             return next(err);

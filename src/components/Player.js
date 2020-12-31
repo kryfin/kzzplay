@@ -10,12 +10,9 @@ export class ResponsivePlayer extends React.Component {
             <ReactPlayer
             className='react-player'
             controls= {true}
-            playsinline= {true}
+      
             playing
-            url={[
-                {src: 'https://videosharingexampled.s3-ap-southeast-1.amazonaws.com/counting.mp4', type: 'video/mp4'},
-                {src: 'https://videosharingexampled.s3-ap-southeast-1.amazonaws.com/toto.mp4', type: 'video/mp4'}
-              ]}
+            url= 'https://videosharingexampled.s3-ap-southeast-1.amazonaws.com/toto.mp4'
  
             />
             </div>

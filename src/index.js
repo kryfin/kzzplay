@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { App } from './components/App';
 import './static/css/style.css';
 
 
 ReactDOM.render(
-    <BrowserRouter>  
+    <HashRouter>  
     <App />
-    </BrowserRouter>, // eslint-disable-line no_undef
+    </HashRouter>, // eslint-disable-line no_undef
     document.getElementById('react-container') // eslint-disable-line no-undef
 
 )
