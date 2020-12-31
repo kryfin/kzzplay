@@ -1,5 +1,5 @@
 {
-  "name": "pixdire",
+  "name": "kzzplay",
   "version": "1.0.0",
   "description": "useful",
   "main": "main.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kryfin/pixdire.git"
+    "url": "git+https://github.com/kryfin/kzzplay.git"
   },
   "keywords": [
     "kkl"
@@ -26,9 +26,9 @@
   "author": "kryfin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kryfin/pixdire/issues"
+    "url": "https://github.com/kryfin/kzzplay/issues"
   },
-  "homepage": "https://github.com/kryfin/pixdire#readme",
+  "homepage": "https://github.com/kryfin/kzzplay#readme",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",

@@ -9,8 +9,8 @@ import { ResponsivePlayer } from './Player';
 export const App = () =>{
     return(
  <div className="content">
-        <h1 className="awful-selfie">Pixdire</h1>
-        <p className="description">the sharing app</p>
+        <h1 className="awful-selfie">Kzzplay</h1>
+        <p className="description">the media app</p>
         
         <Switch>
             <Route exact path="/" component={Clock}/>
